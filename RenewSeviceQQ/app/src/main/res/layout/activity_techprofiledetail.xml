@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:background="@android:color/white">
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/newCommentContainer"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/activity_post_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/imageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/relLayout1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </androidx.appcompat.widget.Toolbar>
+                    </com.google.android.material.appbar.AppBarLayout>
+
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/CoverImgTh"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/ic_launcher_background"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/techTitleToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/relLayout1"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/kanit"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="บริษัท ไข่หอมเจียว จำกัด"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:id="@+id/backArrowTech"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/relLayout1"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/baseline_arrow_back_white_24dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleCompany"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/techImageView"
+                android:layout_alignEnd="@+id/techImageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="-320dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toStartOf="@+id/techImageView"
+                android:fontFamily="@font/kanit"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="บริษัท ไข่หอมเจียว จำกัด"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/spinnerCompany"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/titleCompany"
+                android:layout_alignEnd="@+id/techImageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginEnd="-413dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/techImageView"
+                android:fontFamily="@font/kanit"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="สถาปนิกและออกแบบ"
+                android:textColor="@color/primary_dark"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:id="@+id/authorContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerCompany"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:id="@+id/authorLabelTextView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@mipmap/ic_locationb" />
+
+                <TextView
+                    android:id="@+id/techAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kanit"
+                    android:text="48/18 หมู่ 8 ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี 11120"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/authorContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/authorContainer"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:id="@+id/authorLabelTextView2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@mipmap/ic_phoneb"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/techPhone"
+                    android:layout_width="344dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kanit"
+                    android:text="0929525740"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/authorContainer2"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="ข้อมูลกิจการ"
+                android:fontFamily="@font/kanit"
+                android:textSize="20dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/techDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_marginTop="-0dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="ออกแบบอาคาร ออกแบบตกแต่งภายใน
+รับเหมาก่อสร้างอาคาร รับเหมาตกแต่งภายในจัดภูมิทัศน์ ติดตั้ระบบสาธารณูปโภค (ไฟฟ้า ประปา ปรับอากาศ) "
+                android:fontFamily="@font/kanit"
+                android:textSize="20dp"
+                android:textColor="@color/primary_dark" />
+            <View
+                android:id="@+id/shadow2"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_below="@+id/techDesc"
+                android:background="@drawable/top_shadow" />
+            <TextView
+                android:id="@+id/commentsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shadow2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="ความคิดเห็นของผู้ใช้"
+                android:textSize="20dp"
+                android:fontFamily="@font/kanit"
+                android:textColor="@color/black" />
+
+            <RelativeLayout
+                android:id="@+id/commentsParentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/commentsLabel"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="LinearLayoutManager"
+                    android:visibility="visible"
+                    tools:listitem="@layout/comment_list_item" />
+
+
+
+                <TextView
+                    android:id="@+id/warningCommentsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Internet Connection Fail"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/techImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="104dp"
+                android:layout_below="@+id/imageContainer"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="318dp"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                android:src="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@+id/newCommentContainer"
+        android:background="@drawable/top_shadow" />
+
+    <LinearLayout
+        android:id="@+id/newCommentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Enter your comment ..."
+            android:inputType="textMultiLine"
+            android:maxHeight="100dp"
+            android:minHeight="50dp"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/send_comment_button_bg"
+            android:enabled="true"
+            android:minWidth="0dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="SEND"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".3"
+            android:background="@color/profilelist">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:outlineAmbientShadowColor="@color/black"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".7"
+            android:background="#F9F9FF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/kanit"
+                android:gravity="center|center_vertical"
+                android:text="Fullname"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/textEditProfile"
+                android:layout_width="267dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.3"
+                android:fontFamily="@font/kanit"
+                android:gravity="center_vertical"
+                android:text="อัพเดตโปรไฟล์"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

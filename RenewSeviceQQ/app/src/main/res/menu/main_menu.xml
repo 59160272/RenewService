@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.renewsproject.InsertdataProfile">
+
+    <item
+        android:id="@+id/action_search_btn"
+        android:icon="@drawable/ic_menu_search"
+        android:title="@string/action_search_text"
+        app:actionViewClass= "androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
+
+
+
+</menu>

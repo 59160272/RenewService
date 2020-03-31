@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <!-- ************Top Toolbar************ -->
+        <RelativeLayout
+            android:id="@+id/relLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/snippet_top_prolfilebar" />
+
+        </RelativeLayout>
+
+            <!-- ************Middile Section************ -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout2"
+                android:layout_below="@id/relLayout1">
+
+                <LinearLayout
+                    android:id="@+id/linLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <include layout="@layout/snippet_top_profile" />
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginBottom="-5dp"
+                    android:layout_above="@+id/linLayout2"
+                    android:background="@drawable/top_shadow" />
+                <LinearLayout
+                    android:id="@+id/linLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linLayout"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/display_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanit"
+                        android:text="ข้อมูลติดต่อ"
+                        android:background="@color/primary_dark"
+                        android:textColor="@color/white"
+                        android:padding="5dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/kanit"
+                        android:text="Address"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/phoneweb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Phone Number"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_above="@+id/linLayout3"
+                    android:background="@drawable/top_shadow" />
+                <LinearLayout
+                    android:id="@+id/linLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linLayout2"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <Button
+                        android:id="@+id/listAnnBtn"
+                        android:layout_width="378dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/colorPrimary"
+                        android:fontFamily="@font/kanit"
+                        android:paddingLeft="20dp"
+                        android:text="รายการประกาศของฉัน"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/btnViewPfTech"
+                        android:layout_width="378dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorPrimary"
+                        android:fontFamily="@font/kanit"
+                        android:paddingLeft="20dp"
+                        android:text="โปรไฟล์ช่างของฉัน"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImgRegisterTech"
+                        android:layout_width="wrap_content"
+                        android:layout_height="131dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/findtech" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</merge>

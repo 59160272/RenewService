@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/tvViewPro"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    app:cardBackgroundColor="#F7FBFD"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayout1"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:padding="2dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/ListViewTech"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="11dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:fontFamily="@font/kanit"
+            android:maxLines="2"
+            android:text="Suadom Architect"
+            android:textColor="#2A2E43"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ListView_cag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ListViewTech"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:fontFamily="@font/kanit"
+            android:textColor="#4A5179"
+            android:text="สถาปนานิกและออกแบบ"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/tvpro_desc"
+            android:layout_width="40dp"
+            android:layout_height="83dp"
+            android:layout_below="@+id/ListViewTech"
+            android:layout_marginStart="267dp"
+            android:layout_marginTop="-48dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:src="@drawable/ic_info" />
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>

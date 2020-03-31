@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bgfind">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <!-- top toolbar-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout1">
+
+                <include layout='@layout/layout_top_tabs'/>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="125dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="สร้างโปรไฟล์ช่าง"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/backArrowTech"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/baseline_arrow_back_white_24dp" />
+
+            </RelativeLayout>
+
+            <!-- technic section -->
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/kanit"
+                android:padding="5dp"
+                android:text="  *  เลือกประเภทกิจการ"
+                android:textColor="@color/red"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+
+            <RelativeLayout
+                android:id="@+id/relLayout2"
+                android:layout_width="380dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:background="@color/white">
+
+
+
+
+                <Spinner
+                    android:id="@+id/spinnerTech"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:outlineAmbientShadowColor="@color/black" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <EditText
+                    android:id="@+id/tech_title"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:fontFamily="@font/kanit"
+                    android:hint="ชื่อกิจการ"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* ชื่อกิจการ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <EditText
+                    android:id="@+id/tech_desception"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:fontFamily="@font/kanit"
+                    android:hint="ราละเอียดกิจการ"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp"
+                    android:gravity="top"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* ราละเอียดกิจการ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLayout20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <EditText
+                    android:id="@+id/tech_phone"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:fontFamily="@font/kanit"
+                    android:hint="กรอกเบอร์โโทรศัพท์ติดต่อกิจการ"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textVie11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* หมายเลขโทรศัพท์กิจการ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout20"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/radioGroup">
+                <RadioButton
+                    android:id="@+id/checkbox_people"
+                    android:layout_width="313dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/kanit"
+                    android:gravity="top"
+                    android:text="บุคคลธรรมดา"
+                    android:onClick="checkButton"
+                    android:padding="10dp"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textSize="18sp"/>
+
+                <RadioButton
+                    android:id="@+id/checkbox_niti"
+                    android:layout_width="313dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:gravity="top"
+                    android:text="บริษัท / ห้างหุ้นส่วนจำกัด"
+                    android:onClick="checkButton"
+                    android:padding="10dp"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textSize="18sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* ประเภทธุรกิจ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <ImageView
+                    android:id="@+id/tech_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="244dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/picup"
+                    android:textSize="16sp"></ImageView>
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* อัพโหลดรูปภาพ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/relLayout8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout7"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="33dp">
+
+                <EditText
+                    android:id="@+id/tech_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:fontFamily="@font/kanit"
+                    android:hint="กรอกที่อยู่ที่อยู่กิจการ"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp"
+                    android:gravity="top"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* ที่อยู่กิจการ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/relLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="33dp">
+
+                <EditText
+                    android:id="@+id/tech_keyword"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:fontFamily="@font/kanit"
+                    android:hint="เช่น เดินสายไฟ, ติดตั้งแอร์, รับเหมาก่อสร้าง"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/kanit"
+                    android:padding="5dp"
+                    android:text="* คำค้นหากิจการ"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/relLayout10"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="33dp">
+
+                <Button
+                    android:id="@+id/btnPostTech"
+                    android:layout_width="378dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/orage_rounded_button"
+                    android:fontFamily="@font/kanit"
+                    android:text="ยืนยันข้อมูล"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></Button>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+

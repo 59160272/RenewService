@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tvViewPro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="#F6F6F6"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:id="@+id/relLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="#F7FBFD">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Post_Img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="2dp"
+                android:src="@mipmap/ic_launcher" />
+
+
+            <TextView
+                android:id="@+id/SearchPost_Title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="11dp"
+                android:layout_toEndOf="@+id/Post_Img"
+                android:fontFamily="@font/kanit"
+                android:maxLines="1"
+                android:text="หาช่างไฟฟ้า เปลี่ยนท่อราง"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Post_provice"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SearchPost_Title"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/Post_Img"
+                android:fontFamily="@font/kanit"
+                android:maxLines="2"
+                android:text="ชลบุรี"
+                android:textColor="#4A5179"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Post_provice"
+                android:layout_marginStart="-76dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/Post_Img"
+                android:fontFamily="@font/kanit"
+                android:gravity="left"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="ดูรายละเอียดเพิ่มเติม"
+                android:textColor="@color/primary_dark"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!-- top toolbar-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout1">
+
+                <include layout='@layout/layout_top_tabs'/>
+
+                <TextView
+                    android:id="@+id/tvPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="125dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="TEXT"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/backArrowPV"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/baseline_arrow_back_white_24dp" />
+
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/con">
+
+
+                <TextView
+                    android:id="@+id/post_title"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/kanit"
+                    android:maxLines="2"
+                    android:text="Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.153"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/post_timestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="196dp"
+                    android:layout_marginTop="16dp"
+                    android:text="15/2/2020"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/blog_image"
+                    app:layout_constraintStart_toEndOf="@+id/post_category"
+                    app:layout_constraintTop_toBottomOf="@+id/post_title"
+                    app:layout_constraintVertical_bias="1.0"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/post_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="ประเภท : ไฟฟ้า"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_title" />
+
+                <ImageView
+                    android:id="@+id/blog_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_category"
+                    app:srcCompat="@drawable/image_placeholder" />
+
+                <TextView
+                    android:id="@+id/post_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo. "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blog_image" />
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@mipmap/ic_locationb"
+                    android:gravity="left"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPost_address"
+                    app:layout_constraintTop_toBottomOf="@+id/post_address" />
+
+                <TextView
+                    android:id="@+id/post_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/kanit"
+                    android:text=" สถานที่ตั้งโครงการ"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.128"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_desc" />
+
+                <TextView
+                    android:id="@+id/tvPost_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="Burasiri Condo, Chonburi"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.192"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_address" />
+
+                <TextView
+                    android:id="@+id/post_budget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="60000"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.192"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_dates" />
+
+                <TextView
+                    android:id="@+id/post_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/kanit"
+                    android:text=" งบประมาณ"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPost_address" />
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@mipmap/ic_bath"
+                    android:gravity="left"
+                    app:layout_constraintEnd_toStartOf="@+id/post_budget"
+                    app:layout_constraintTop_toBottomOf="@+id/post_dates" />
+
+                <TextView
+                    android:id="@+id/post_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="0929525740"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.192"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPost_dates"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@mipmap/ic_phonedetail"
+                    android:gravity="left"
+                    app:layout_constraintEnd_toStartOf="@+id/post_phone"
+                    app:layout_constraintHorizontal_bias="0.842"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPost_dates"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvPost_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/kanit"
+                    android:text=" เบอร์โทรศัพท์ติดต่อ"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_budget"
+                    android:visibility="gone"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+
+                android:layout_below="@id/con">
+                <View
+                    android:id="@+id/shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_above="@+id/newCommentContainer"
+                    android:background="@drawable/top_shadow" />
+
+                <Button
+                    android:id="@+id/view_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="70dp"
+                    android:background="@drawable/blue_rounded_button"
+                    android:fontFamily="@font/kanit"
+                    android:maxLines="2"
+                    android:text="สนใจงานนี้"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">RENEW SERVICE</string>
+    <string name="edit_profile_fragment">Edit Profile</string>
+    <string name="sign_out_fragment">Sign Out</string>
+    <string name="search">Search</string>
+
+    <!-- Firebase messages -->
+    <string name="auth_failed">Failed to Authenticate</string>
+    <string name="auth_success">Authentication Success</string>
+
+    <!-- Firebase database fields -->
+    <string name="dbname_users">users</string>
+    <string name="dbname_user_account_settings">user_account_settings</string>
+
+
+    <string name="title_activity_insertdata_profile">InsertdataProfile</string>
+    <string name="large_text">
+
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout_text">Logout</string>
+    <string name="action_search_text">Search</string>
+    <string name="nav_home" />
+    <string name="nav_add" />
+    <string name="nav_notification" />
+    <string name="nav_account" />
+    <string name="strhome">Home Fragment</string>
+    <string name="strsearch">Search Fragment</string>
+    <string name="strnotification">Notification Fragment</string>
+    <string name="straccount">Account Fragment</string>
+
+    <!--Search-->
+    <string name="search_menu_item">Search</string>
+    <string name="search_hint">Search …</string>
+    <string name="posts_tab_title">Posts</string>
+    <string name="users_tab_title">Technician</string>
+    <string name="empty_posts_search_message">No posts found</string>
+    <string name="empty_user_search_message">No users found</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string-array name="numbers">
+        <item>สถาปนิกและออกแบบ</item>
+        <item>เฟอร์นิเจอร์และBuilt-in</item>
+        <item>วอลเปเปอร์</item>
+        <item>ผ้าม่าน</item>
+        <item>ทาสีและเคลือบผิว</item>
+        <item>จัดสวน</item>
+        <item>รับเหมาก่อสร้าง/ต่อเติม</item>
+        <item>ควบคุมงานก่อสร้างและวิศวกร</item>
+        <item>งานเชื่อมและเหล็ก</item>
+        <item>หลังคาและกันสาด</item>
+        <item>สระว่ายน้ำ</item>
+        <item>พื้นและผนังกระเบื้อง-in</item>
+        <item>ฝ้าและเพดาน</item>
+        <item>ไฟฟ้า</item>
+        <item>ประปาและสุขภัณฑ์</item>
+        <item>แอร์และระบบระบายอากาศ</item>
+        <item>CCTV,Network,สัญญาณเตือนภัย</item>
+        <item>สแตนเลส</item>
+        <item>ไม้</item>
+        <item>หิน</item>
+        <item>กระจกและอลูมิเนียม</item>
+        <item>กำจัดปลวกและแมลง-in</item>
+        <item>ทำความสะอาด</item>
+        <item>ขนย้าย</item>
+        <item>งานรื้อถอน</item>
+        <item>ตรวจรับงานและให้คำปรึกษา</item>
+        <item>รับทำป้าย-in</item>
+        <item>ซ่อมทั่วไป</item>
+        <item>บริการ,ให้เช่า</item>
+        <item>สร้างโรงงาน</item>
+        <item>อาคารสูง</item>
+        <item>สร้างสระพาน,ถนน,งานทาง-in</item>
+        <item>ติดตั้งเครื่องจักร</item>
+        <item>อื่นๆ</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="calling_activity">calling_activity</string>
+
+
+
+</resources>

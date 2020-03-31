@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "157922937375",
+    "firebase_url": "https://renewseviceqq.firebaseio.com",
+    "project_id": "renewseviceqq",
+    "storage_bucket": "renewseviceqq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157922937375:android:21871b6f74f5650586e32a",
+        "android_client_info": {
+          "package_name": "com.example.renewseviceqq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157922937375-9j8hhf6f2kglj0no80o4c2tl2sqaeq3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.renewseviceqq",
+            "certificate_hash": "92bb08906bca661253318ff255ff1836bfeb3f63"
+          }
+        },
+        {
+          "client_id": "157922937375-r0eaepq66shaae5mjqjp633eprukspsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr9Rc-uTLKjyEuFjmd18oIVlIXxOlo7wA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157922937375-r0eaepq66shaae5mjqjp633eprukspsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

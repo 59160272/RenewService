@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/tvViewPro"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    app:cardBackgroundColor="#F7FBFD"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayout1"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/postListView_Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:padding="2dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="11dp"
+            android:layout_toEndOf="@+id/postListView_Image"
+            android:fontFamily="@font/kanit"
+            android:maxLines="2"
+            android:text="Renovate House"
+            android:textColor="#2A2E43"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postList_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_title"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/postListView_Image"
+            android:fontFamily="@font/kanit"
+            android:text="10/2/63"
+            android:textColor="#4A5179"
+            android:textSize="16sp" />
+
+       \
+
+        <ImageView
+            android:id="@+id/Img_More"
+            android:layout_width="40dp"
+            android:layout_height="83dp"
+            android:layout_below="@+id/post_title"
+            android:layout_marginStart="267dp"
+            android:layout_marginTop="-48dp"
+            android:layout_toEndOf="@+id/postListView_Image"
+            android:src="@drawable/ic_info" />
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>
