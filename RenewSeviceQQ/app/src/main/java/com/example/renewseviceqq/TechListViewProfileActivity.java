@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +29,11 @@ public class TechListViewProfileActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager layoutManager;
     private TechListAdapter ShowTechListAdapter;
-
+    TextView hideText;
     //FireStore
     private FirebaseFirestore mStore;
     private FirebaseAuth mAuth;
-    private String techUserID;
+    private String userID;
     ProgressDialog pd;
 
     @Override
@@ -41,9 +42,9 @@ public class TechListViewProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_techpflistview);
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
-        techUserID = mAuth.getCurrentUser().getUid();
+        userID = mAuth.getCurrentUser().getUid();
         pd = new ProgressDialog(this);
-
+        hideText = findViewById(R.id.hideTextViewTech);
         ///initialize views
         mRecyclerView = findViewById(R.id.RecyclerView_TechPFListView);
         mRecyclerView.setHasFixedSize((true));
@@ -66,7 +67,7 @@ public class TechListViewProfileActivity extends AppCompatActivity {
     private void showData() {
         pd.setTitle("Loading ....");
         pd.show();
-        Query firstQuery = mStore.collectionGroup("userTech").whereEqualTo("techUserId",techUserID);
+        Query firstQuery = mStore.collectionGroup("userTech").whereEqualTo("techUserId",userID);
         firstQuery.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot documentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -78,6 +79,7 @@ public class TechListViewProfileActivity extends AppCompatActivity {
                             TechKey TechKey = doc.getDocument().toObject(TechKey.class);
                             showTechList.add(TechKey);
                             ShowTechListAdapter.notifyDataSetChanged();
+                            hideText.setVisibility(View.GONE);
                         }
                         mRecyclerView.setAdapter(ShowTechListAdapter);
                     }

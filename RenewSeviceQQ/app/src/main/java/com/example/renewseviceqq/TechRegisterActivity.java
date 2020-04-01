@@ -236,7 +236,8 @@ public class TechRegisterActivity extends AppCompatActivity implements AdapterVi
         final String radio = thSortOption.getText().toString();
         final String address = thAddress.getText().toString();
         final String spinnerTh = thSpinner.getSelectedItem().toString();
-        final String techUserId = UUID.randomUUID().toString();
+        final String IDtech = UUID.randomUUID().toString();
+        final String techNum = UUID.randomUUID().toString();
         final String keyword = thKeyword.getText().toString();
         final String phone = thPhone.getText().toString();
         Map<String, Object> TechMap = new HashMap<>();
@@ -247,12 +248,13 @@ public class TechRegisterActivity extends AppCompatActivity implements AdapterVi
         TechMap.put("techSpinner", spinnerTh);
         TechMap.put("techKeyword", keyword);
         TechMap.put("techRadio",radio);
-        TechMap.put("IDtech", techUserId);
+        TechMap.put("IDtech", IDtech);
+        TechMap.put("techNum", techNum);
         TechMap.put("techUserId",userID );
         TechMap.put("techImage", downloadImageUrl);
 
        // mStore.collection("users").document(userID).collection("userTech")
-        mStore.collection("userTech").document(userID)
+        mStore.collection("userTech").document(IDtech)
                 .set(TechMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

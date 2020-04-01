@@ -7,7 +7,7 @@ public class TechKey extends IDtech {
     public TechKey()  {
     }
     public TechKey(String techUserId, String techTitle, String techSpinner, String techImage, String techDesc,String techPhone,
-                    String techAddress,String techKeyword) {
+                    String techAddress,String techKeyword ) {
         this.techUserId = techUserId;
         this.techTitle = techTitle;
         this.techSpinner = techSpinner;

@@ -60,4 +60,8 @@
 
     <dimen name="refresh_layout_end_offset">24dp</dimen>
     <dimen name="refresh_layout_start_offset">-24dp</dimen>
+
+    <dimen name="stan_55">65dp</dimen>
+    <dimen name="stan_105">130dp</dimen>
+
 </resources>

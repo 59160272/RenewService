@@ -1,20 +1,13 @@
 package com.example.renewseviceqq;
 
-import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,51 +17,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.squareup.picasso.Picasso;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-import io.grpc.Compressor;
-
-import static android.app.Activity.RESULT_OK;
-
 public class EditProfileActivity extends AppCompatActivity {
     private static final String TAG = "EditProfileFragment";
-    private CircleImageView mProfilePhoto;
+    private ImageView mProfilePhoto;
 
     private EditText userName,userPhone,userAddress;
     private TextView userEmail;
@@ -88,7 +58,7 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_editprofile);
+        setContentView(R.layout.activity_editprofile);
         mProfilePhoto = findViewById(R.id.profile_photo);
         TextView mSave =  findViewById(R.id.saveChanges);
         userName = findViewById(R.id.userfname);
@@ -128,9 +98,14 @@ public class EditProfileActivity extends AppCompatActivity {
                                 userPhone.setText(phone);
                                 userAddress.setText(address);
                                 userEmail.setText(email);
-                                RequestOptions placeholderRequest = new RequestOptions();
+                                Picasso.get()
+                                        .load(image)
+                                        .placeholder(R.mipmap.ic_launcher)
+                                        .error(R.mipmap.ic_launcher)
+                                        .into(mProfilePhoto);
+                              /* RequestOptions placeholderRequest = new RequestOptions();
                                 placeholderRequest.placeholder(R.mipmap.ic_launcher);
-                                Glide.with(EditProfileActivity.this).setDefaultRequestOptions(placeholderRequest).load(image).into(mProfilePhoto);
+                                Glide.with(EditProfileActivity.this).setDefaultRequestOptions(placeholderRequest).load(image).into(mProfilePhoto);*/
                             }
                         } else {
 

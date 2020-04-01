@@ -10,32 +10,32 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            android:id="@+id/profileToolBar">
-
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_centerVertical="true"
                     android:id="@+id/backArrow"
-                    android:src="@drawable/baseline_arrow_back_white_24dp"/>
+                    android:layout_width="30dp"
+                    android:layout_height="33dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/baseline_arrow_back_white_24dp" />
 
                 <TextView
-                    android:layout_toRightOf="@+id/backArrow"
+                    android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="แก้ไขโปรไฟล์"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_toStartOf="@+id/saveChanges"
+                    android:layout_toRightOf="@+id/backArrow"
                     android:fontFamily="@font/kanit"
-                    android:textSize="20sp"
+                    android:text="อัพเดตโปรไฟล์"
                     android:textColor="@color/white"
-                    android:layout_marginStart="5dp"
-                    android:id="@+id/profileName"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/saveChanges"
@@ -44,7 +44,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:fontFamily="@font/kanit"
                     android:text="อัพเดต"
                     android:textColor="@color/white" />

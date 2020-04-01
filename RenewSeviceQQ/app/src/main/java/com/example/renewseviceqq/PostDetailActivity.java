@@ -50,7 +50,7 @@ public class PostDetailActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     ImageView BackArror;
     TextView txtPostTitle,txtCategory,txtPostDesc,txtAddress,txtBudget,txtTitle,txtTimeStamp,txtPhone;
-    ImageView imgUserPost,imgPost;
+    ImageView imgPost;
     private FirebaseAuth.AuthStateListener mAuthListener;
     String pId, pTitile, pDesc, pAddress, pBudget, pImagePost, pDate, pUserName,postCategory,pToolbarTitile,pPhone;
     Dialog myDialog;
@@ -65,11 +65,9 @@ public class PostDetailActivity extends AppCompatActivity {
         mStorageRef = storage.getInstance().getReference();
 
 
-
-
         BackArror = findViewById(R.id.backArrowPV);
         imgPost = findViewById(R.id.blog_image);
-        imgUserPost = findViewById(R.id.blog_user_image);
+
         txtPhone = findViewById(R.id.post_phone);
         txtPostTitle = findViewById(R.id.tvPost);
         txtCategory = findViewById(R.id.post_category);

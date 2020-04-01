@@ -32,12 +32,23 @@
             android:textSize="20sp" />
 
     </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/kanit"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="350dp"
+        android:text="ไม่มีข้อมูลโปรไฟล์ช่าง"
+        android:id="@+id/hideTextViewTech"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerView_TechPFListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        tools:listitem="@layout/listview_profiletech"/>
+        tools:listitem="gone"/>
 
 </FrameLayout>

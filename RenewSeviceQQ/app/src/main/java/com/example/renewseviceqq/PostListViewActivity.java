@@ -1,10 +1,12 @@
 package com.example.renewseviceqq;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -33,13 +36,13 @@ public class PostListViewActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     //layout manager for recyclerview
     RecyclerView.LayoutManager layoutManager;
-
+    private FloatingActionButton addPostBtn;
     //FireStore
     private FirebaseFirestore mStore;
     private FirebaseAuth mAuth;
     private PostAdapter PostAdapter;
     private String userID;
-
+    TextView hideText;
     ProgressDialog pd;
 
     @Override
@@ -50,7 +53,7 @@ public class PostListViewActivity extends AppCompatActivity {
         mStore = FirebaseFirestore.getInstance();
         userID = mAuth.getCurrentUser().getUid();
         pd = new ProgressDialog(this);
-
+        hideText = findViewById(R.id.hideTextView);
        ///initialize views
         mRecyclerView = findViewById(R.id.RecyclerView_PostListView);
 
@@ -71,6 +74,15 @@ public class PostListViewActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        addPostBtn = findViewById(R.id.add_post_btn);
+        addPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newPostIntent = new Intent(PostListViewActivity.this, NewPostActivity.class);
+                startActivity(newPostIntent);
+            }
+        });
     }
 
     private void showData() {
@@ -89,6 +101,7 @@ public class PostListViewActivity extends AppCompatActivity {
                             ShowPost showPost = doc.getDocument().toObject(ShowPost.class);
                             showPostList.add(showPost);
                             PostAdapter.notifyDataSetChanged();
+                            hideText.setVisibility(View.GONE);
                         }
                         mRecyclerView.setAdapter(PostAdapter);
                     }

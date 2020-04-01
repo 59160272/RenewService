@@ -3,33 +3,23 @@ package com.example.renewseviceqq;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
     private static final String TAG = "Search";
@@ -45,11 +35,9 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_search);
+        setContentView(R.layout.activity_search);
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -59,12 +47,7 @@ public class SearchActivity extends AppCompatActivity {
         }
         initContentView();
 
-
-
     }
-
-
-
     private void initContentView() {
         viewPager = findViewById(R.id.pager);
         tabLayout = findViewById(R.id.tabLayout);
@@ -100,7 +83,7 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
     private void search(final String searchText) {
-        Fragment fragment = tabsAdapter.getItem(viewPager.getCurrentItem());
+        //Fragment fragment = tabsAdapter.getItem(viewPager.getCurrentItem());
         //((Searchable)fragment).search(searchText);
         LogUtil.logDebug(TAG, "search text: " + searchText);
     }
@@ -108,11 +91,10 @@ public class SearchActivity extends AppCompatActivity {
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) searchMenuItem.getActionView();
-        //searchView = (SearchView) searchMenuItem.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
-        searchMenuItem.expandActionView();
+       // searchMenuItem.expandActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -148,7 +130,7 @@ public class SearchActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu, menu);
 
-        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+       MenuItem searchMenuItem = menu.findItem(R.id.action_search);
         initSearch(searchMenuItem);
 
         return true;

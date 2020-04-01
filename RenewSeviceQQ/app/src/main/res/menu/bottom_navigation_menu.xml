@@ -8,7 +8,8 @@
     <item
         android:id="@+id/ic_search"
         android:icon="@drawable/searchtp"
-        android:title="Search" />
+        android:title="Search"
+        android:visible="false"/>
 
 
     <!--<item

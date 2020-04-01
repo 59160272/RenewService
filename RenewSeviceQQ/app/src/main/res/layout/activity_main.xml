@@ -17,6 +17,7 @@
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:focusable="true"
+        android:visibility="gone"
         app:srcCompat="@drawable/action_add" />
     <FrameLayout
         android:id="@+id/main_container"

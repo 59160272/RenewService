@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton addPostBtn;
     private HomeFragment homeFragment;
     private AccountFragment accountFragment;
-
+    private SearchPostFragment searchPostFragment;
     TextView btnPostList;
     Fragment selectedFragment = null;
 
@@ -43,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*toolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);*/
-
-
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         //getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new HomeFragment()).commit();
@@ -55,11 +51,10 @@ public class MainActivity extends AppCompatActivity {
             // FRAGMENTS
             homeFragment = new HomeFragment();
 
-
+            searchPostFragment = new SearchPostFragment();
             accountFragment = new AccountFragment();
 
             initializeFragment();
-
 
             mainbottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -76,36 +71,27 @@ public class MainActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.ic_search:
-                            Intent a = new Intent(MainActivity.this, SearchActivity.class);
+                            Intent a = new Intent(mContext, SearchActivity.class);
                             startActivity(a);
                             return true;
-
-
-
-
-                        default:
+                        /*case R.id.ic_search:
+                            replaceFragment(searchPostFragment, currentFragment);
+                            return true;*/
+                    }
                             return false;
-
-
-                    }
-                    /*if(selectedFragment != null){
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,selectedFragment).commit();
-                    }
-                    return true;*/
                 }
             });
-            addPostBtn = findViewById(R.id.add_post_btn);
+           /* addPostBtn = findViewById(R.id.add_post_btn);
             addPostBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent newPostIntent = new Intent(MainActivity.this, NewPostActivity.class);
                     startActivity(newPostIntent);
                 }
-            });
-
-
+            });*/
 
         }
+
 
     }
 
@@ -124,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.main_container, homeFragment);
         fragmentTransaction.add(R.id.main_container, accountFragment);
         fragmentTransaction.hide(accountFragment);
-
+        fragmentTransaction.hide(searchPostFragment);
         fragmentTransaction.commit();
     }
     private void replaceFragment(Fragment fragment, Fragment currentFragment){
@@ -133,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(fragment == homeFragment){
-
+            fragmentTransaction.hide(searchPostFragment);
             fragmentTransaction.hide(accountFragment);
 
 
@@ -141,11 +127,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(fragment == accountFragment){
-
+            fragmentTransaction.hide(searchPostFragment);
             fragmentTransaction.hide(homeFragment);
+        }
 
-
-
+        if(fragment == searchPostFragment){
+            fragmentTransaction.hide(accountFragment);
+            fragmentTransaction.hide(homeFragment);
         }
 
         fragmentTransaction.show(fragment);

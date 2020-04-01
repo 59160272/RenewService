@@ -9,7 +9,17 @@
 
 
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/kanit"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="480dp"
+        android:text="ไม่พบข้อมูลโปรไฟล์ช่าง"
+        android:id="@+id/hideTextViewSearchTech"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -17,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        tools:listitem="@layout/user_item_list_view"/>
+        tools:listitem="gone"/>
 
 
 </FrameLayout>

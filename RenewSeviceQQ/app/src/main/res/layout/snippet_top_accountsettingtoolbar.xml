@@ -21,16 +21,17 @@
                     android:src="@drawable/baseline_arrow_back_white_24dp"/>
 
                 <TextView
-                    android:layout_toRightOf="@+id/backArrow"
+                    android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="false"
+                    android:layout_marginStart="110dp"
+                    android:layout_toRightOf="@+id/backArrow"
                     android:fontFamily="@font/kanit"
                     android:text="ตัวเลือก"
-                    android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:layout_marginStart="5dp"
-                    android:id="@+id/profileName"/>
+                    android:textSize="20sp" />
 
 
             </RelativeLayout>

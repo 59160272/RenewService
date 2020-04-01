@@ -121,7 +121,6 @@ public class TechProfileDetailActivity extends AppCompatActivity {
             Glide.with(this).load(tImageCover).into(techImgCover);
             tKeyId = bundle.getString("IDtech");
             tUserId = bundle.getString("techUserId");
-
         }
 
 
@@ -169,7 +168,7 @@ public class TechProfileDetailActivity extends AppCompatActivity {
                     String comment_message = commentEditText.getText().toString();
 
                     Map<String, Object> commentsMap = new HashMap<>();
-                    commentsMap.put("userPhoto", imgUser);
+
                     commentsMap.put("userName", userID2);
                     commentsMap.put("message", comment_message);
                     commentsMap.put("user_id", userID);

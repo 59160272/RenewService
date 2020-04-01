@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
@@ -38,8 +39,7 @@ public class SearchPostFragment extends Fragment {
     ProgressDialog pd;
     private FirebaseFirestore mStore;
     private FirebaseAuth mAuth;
-    private Toolbar SearchPost_toolbar;
-
+    TextView hideText;
 
     @Nullable
     @Override
@@ -52,16 +52,13 @@ public class SearchPostFragment extends Fragment {
         pd = new ProgressDialog(getActivity());
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
-
-       /*SearchPost_toolbar = (Toolbar) view.findViewById(R.id.SearchPost_toolbar);
-
-            ((AppCompatActivity)getActivity()).setSupportActionBar(SearchPost_toolbar);
-
-        SearchPost_toolbar.setTitle("Posts");*/
-
+        hideText = view.findViewById(R.id.hideTextViewPost);
         showData();
 
+        hideText.setVisibility(View.INVISIBLE);
+
         return  view;
+
     }
 
     @Override
@@ -69,6 +66,7 @@ public class SearchPostFragment extends Fragment {
 
         setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
+
     }
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -81,6 +79,7 @@ public class SearchPostFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 searchPost(s);
+                hideText.setVisibility(View.VISIBLE);
                 return false;
             }
 
@@ -93,10 +92,11 @@ public class SearchPostFragment extends Fragment {
 
         super.onCreateOptionsMenu(menu, inflater);
     }
+
     private void showData() {
         pd.setTitle("Loading....");
         pd.show();
-        Query firstQuery = mStore.collection("Posts");
+        Query firstQuery = mStore.collection("Posts").orderBy("timestamp", Query.Direction.DESCENDING).limit(5);
         firstQuery.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot documentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -108,6 +108,7 @@ public class SearchPostFragment extends Fragment {
                             BlogPost BlogPost = doc.getDocument().toObject(BlogPost.class);
                             SearchPostList.add(BlogPost);
                             SearchPostAdapter.notifyDataSetChanged();
+
                         }
                         RecyclerView_PostSearch.setAdapter(SearchPostAdapter);
                     }
@@ -134,6 +135,7 @@ public class SearchPostFragment extends Fragment {
                                     blogPost.getDesc().toLowerCase().contains(searchQuery.toLowerCase())||
                                     blogPost.getAddress().toLowerCase().contains(searchQuery.toLowerCase())){
                                 SearchPostList.add(blogPost);
+                                hideText.setVisibility(View.VISIBLE);
                             }
 
                             SearchPostAdapter.notifyDataSetChanged();

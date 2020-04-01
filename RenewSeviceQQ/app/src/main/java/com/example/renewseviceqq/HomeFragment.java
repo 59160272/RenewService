@@ -16,12 +16,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.renewseviceqq.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -40,27 +44,29 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment  {
     Toolbar toolbar;
     private RecyclerView blog_list_view;
     private List<BlogPost> blog_list;
     ImageView BackArror;
-
+    private FloatingActionButton addPostBtn,home,search;
     private FirebaseFirestore mStore;
     private FirebaseAuth mAuth;
     private BlogRecyclerAdapter blogRecyclerAdapter;
-
+    Float translationY = 100f;
     private DocumentSnapshot lastVisible;
     private Boolean isFirstPageFirstLoad = true;
-
+    TextView tvSearch,tvPost;
+    boolean isOpen=false;
+   // OvershootInterpolator interpolator = new OvershootInterpolator();
+    private static final String TAG = "HomeFragment";
     public HomeFragment() {
         // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         blog_list = new ArrayList<>();
@@ -73,8 +79,45 @@ public class HomeFragment extends Fragment {
         blogRecyclerAdapter = new BlogRecyclerAdapter(blog_list);
         blog_list_view.setLayoutManager(new LinearLayoutManager(container.getContext()));
         blog_list_view.setAdapter(blogRecyclerAdapter);
+        tvSearch = view.findViewById(R.id.search_text);
+        tvPost = view.findViewById(R.id.post_text);
+        home = view.findViewById(R.id.fabhome);
+        addPostBtn = view.findViewById(R.id.add_post_btn);
+        search = view.findViewById(R.id.fabsearch);
 
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isOpen){
+                    openMenu();
+                    tvSearch.setVisibility(View.VISIBLE);
+                    tvPost.setVisibility(View.VISIBLE);
+                }else {
+                    closeMenu();
+                    tvSearch.setVisibility(View.INVISIBLE);
+                    tvPost.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+
+
+        addPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newPostIntent = new Intent(getActivity(), NewPostActivity.class);
+                startActivity(newPostIntent);
+            }
+        });
+
+       search.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent searchIntent = new Intent(getActivity(), SearchActivity.class);
+               startActivity(searchIntent);
+           }
+       });
 
 
         blog_list_view.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -93,9 +136,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-        /*Query firstQuery = mStore.collection("Posts").document(userID).collection("users")
-                .orderBy("timestamp", Query.Direction.DESCENDING).limit(3);*/
         Query firstQuery = mStore.collection("Posts").orderBy("timestamp", Query.Direction.DESCENDING).limit(3);
         firstQuery.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -135,17 +175,48 @@ public class HomeFragment extends Fragment {
 
 
 
+        ImageView profileMenu = (ImageView) view.findViewById(R.id.profileMenu);
+        profileMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent  = new Intent(getActivity(), AccountSettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        //toolbar = (Toolbar)view.findViewById(R.id.ToolbarHome);
-        //setSupportActionBar(toolbar);
+        /*addPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newPostIntent = new Intent(getActivity(), NewPostActivity.class);
+                startActivity(newPostIntent);
+            }
+        });*/
 
 
 
         return view;
     }
 
+    private void openMenu() {
+        isOpen=true;
+        addPostBtn.animate().translationY(-getResources().getDimension(R.dimen.stan_55));
+        search.animate().translationY(-getResources().getDimension(R.dimen.stan_105));
 
+        tvPost.animate().translationY(-getResources().getDimension(R.dimen.stan_55));
+        tvSearch.animate().translationY(-getResources().getDimension(R.dimen.stan_105));
+
+    }
+    private void closeMenu() {
+        isOpen=false;
+        addPostBtn.animate().translationY(0);
+        search.animate().translationY(0);
+
+        tvPost.animate().translationY(0);
+        tvSearch.animate().translationY(0);
+
+
+    }
 
     public void loadMorePost(){
 

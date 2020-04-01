@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -46,12 +47,7 @@ public class SearchTechFragment extends Fragment {
     ProgressDialog pd;
     private FirebaseFirestore mStore;
     private FirebaseAuth mAuth;
-    private Toolbar Search_toolbar;
-
-
-
-
-
+    TextView hideText;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,18 +60,10 @@ public class SearchTechFragment extends Fragment {
         pd = new ProgressDialog(getActivity());
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
+        hideText = view.findViewById(R.id.hideTextViewSearchTech);
 
-
-
-        /*Search_toolbar = (Toolbar) view.findViewById(R.id.Search_toolbar);
-        if (Search_toolbar != null) {
-            ((AppCompatActivity)getActivity()).setSupportActionBar(Search_toolbar);
-        }
-        Search_toolbar.setTitle(null);*/
-
-
+        //hideText.setVisibility(View.INVISIBLE);
         showData();
-
 
         return  view;
 
@@ -100,6 +88,7 @@ public class SearchTechFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 searchUserTech(s);
+
                 return false;
             }
 
@@ -127,6 +116,7 @@ public class SearchTechFragment extends Fragment {
                             TechKey TechKey = doc.getDocument().toObject(TechKey.class);
                             techKeyList.add(TechKey);
                             UserTechListAdapter.notifyDataSetChanged();
+                            hideText.setVisibility(View.VISIBLE);
                         }
                         RecyclerView_TechSearch.setAdapter(UserTechListAdapter);
                     }
@@ -156,6 +146,7 @@ public class SearchTechFragment extends Fragment {
                             techKey.getTechKeyword().toLowerCase().contains(searchQuery.toLowerCase()) ||
                             techKey.getTechDesc().toLowerCase().contains(searchQuery.toLowerCase())){
                                 techKeyList.add(techKey);
+
                             }
 
                             UserTechListAdapter.notifyDataSetChanged();

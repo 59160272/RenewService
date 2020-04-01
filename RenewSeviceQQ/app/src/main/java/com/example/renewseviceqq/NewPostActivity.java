@@ -77,10 +77,8 @@ public class NewPostActivity extends AppCompatActivity implements AdapterView.On
     private FirebaseFirestore mStore;
     StorageReference mStorageRef;
     FirebaseStorage storage;
-
     private static final int PICK_IMAGE_REQUEST = 22;
     private Context mContext = NewPostActivity.this;
-    private EditText pxpPostTitle, pxpPostDesc, pxpAddress, pxpBudget, pxpPhone;
     private ImageView findImg;
     private Uri imgUrl;
     private boolean isChanged = false;
@@ -120,7 +118,9 @@ public class NewPostActivity extends AppCompatActivity implements AdapterView.On
         userID = mAuth.getCurrentUser().getUid();
         storage = FirebaseStorage.getInstance();
         mStorageRef = storage.getInstance().getReference();
-        final CollectionReference query = mStore.collection("Post");
+
+
+
 
 
         btnPost.setOnClickListener(new View.OnClickListener() {
