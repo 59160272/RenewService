@@ -203,8 +203,8 @@ public class HomeFragment extends Fragment  {
         addPostBtn.animate().translationY(-getResources().getDimension(R.dimen.stan_55));
         search.animate().translationY(-getResources().getDimension(R.dimen.stan_105));
 
-        tvPost.animate().translationY(-getResources().getDimension(R.dimen.stan_55));
-        tvSearch.animate().translationY(-getResources().getDimension(R.dimen.stan_105));
+        //tvPost.animate().translationY(-getResources().getDimension(R.dimen.stan_55));
+       // tvSearch.animate().translationY(-getResources().getDimension(R.dimen.stan_105));
 
     }
     private void closeMenu() {

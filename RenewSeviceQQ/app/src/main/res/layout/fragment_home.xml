@@ -54,22 +54,23 @@
 
     <TextView
         android:id="@+id/post_text"
-        android:layout_width="wrap_content"
+        android:layout_width="219dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right|center_horizontal"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/fab_text_bg"
         android:fontFamily="@font/kanit"
+        android:gravity="center"
         android:paddingStart="1dp"
         android:paddingTop="8dp"
         android:paddingEnd="1dp"
         android:paddingBottom="8dp"
         android:text="สร้างใบประกาศหาช่าง"
-        android:background="@drawable/fab_text_bg"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:visibility="invisible" />
+        android:visibility="visible" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabsearch"
         android:layout_width="wrap_content"
@@ -108,8 +109,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/blog_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        tools:listitem="@layout/blog_list_item"/>
+        tools:listitem="gone"/>
 
 </FrameLayout>
