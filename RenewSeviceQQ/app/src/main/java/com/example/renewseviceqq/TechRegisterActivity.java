@@ -252,7 +252,7 @@ public class TechRegisterActivity extends AppCompatActivity implements AdapterVi
         TechMap.put("techImage", downloadImageUrl);
 
        // mStore.collection("users").document(userID).collection("userTech")
-        mStore.collection("userTech").document(IDtech)
+        mStore.collection("userTech").document(userID+IDtech)
                 .set(TechMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
