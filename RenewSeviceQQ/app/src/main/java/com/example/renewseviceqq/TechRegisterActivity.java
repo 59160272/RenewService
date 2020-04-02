@@ -237,7 +237,6 @@ public class TechRegisterActivity extends AppCompatActivity implements AdapterVi
         final String address = thAddress.getText().toString();
         final String spinnerTh = thSpinner.getSelectedItem().toString();
         final String IDtech = UUID.randomUUID().toString();
-        final String techNum = UUID.randomUUID().toString();
         final String keyword = thKeyword.getText().toString();
         final String phone = thPhone.getText().toString();
         Map<String, Object> TechMap = new HashMap<>();
@@ -249,7 +248,6 @@ public class TechRegisterActivity extends AppCompatActivity implements AdapterVi
         TechMap.put("techKeyword", keyword);
         TechMap.put("techRadio",radio);
         TechMap.put("IDtech", IDtech);
-        TechMap.put("techNum", techNum);
         TechMap.put("techUserId",userID );
         TechMap.put("techImage", downloadImageUrl);
 

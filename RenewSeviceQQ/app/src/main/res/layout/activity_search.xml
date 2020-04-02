@@ -16,7 +16,10 @@
         android:fitsSystemWindows="true"
         android:theme="@style/DarkActionBarWithLightAccent">
 
-        <androidx.appcompat.widget.Toolbar
+   <!--<include layout="@layout/snippet_top_searchbar"/>-->
+
+
+       <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -24,6 +27,7 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         </androidx.appcompat.widget.Toolbar>
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

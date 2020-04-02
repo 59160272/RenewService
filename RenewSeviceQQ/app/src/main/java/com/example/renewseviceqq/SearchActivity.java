@@ -38,13 +38,16 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
+            actionBar.setTitle("Search");
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
         initContentView();
 
     }

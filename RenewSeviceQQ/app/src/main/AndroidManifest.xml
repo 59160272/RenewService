@@ -62,7 +62,8 @@
         <activity android:name=".TechRegisterActivity"/>
         <activity android:name=".TechProfileDetailActivity"/>
         <activity android:name=".TechListViewProfileActivity"/>
-        <activity android:name=".SearchActivity"/>
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"/>
 
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
